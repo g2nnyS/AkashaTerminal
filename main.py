@@ -6,5 +6,9 @@ import paramiko
 import time
 import sys
 import os
+import logging
 
+class SSHClient:
+    def __init__(self):
+        self.ssh_client = SSHClient()
 
