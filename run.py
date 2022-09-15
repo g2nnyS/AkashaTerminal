@@ -9,7 +9,7 @@ os.popen('python main.py')
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        MainWindow.setWindowIcon(QIcon("./logo.ico"))
+        #MainWindow.setWindowIcon(QIcon("./logo.ico"))
         self.setWindowTitle('虚空终端')  #窗口标题
         self.desktop = QApplication.desktop()
         self.setFixedSize(self.desktop.width() * 0.4, self.desktop.height() * 0.65) #窗口大小
