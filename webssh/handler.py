@@ -56,7 +56,7 @@ class SSHClient(paramiko.SSHClient):
 
     def auth_interactive(self, username, handler):
         if not self.totp:
-            raise ValueError('Need a verification code for 2fa.')
+            raise ValueError('输入2FA验证码')
         self._transport.auth_interactive(username, handler)
 
     def _auth(self, username, password, pkey, *args):
@@ -364,7 +364,7 @@ class IndexHandler(MixinHandler, tornado.web.RequestHandler):
     def get_hostname(self):
         value = self.get_value('hostname')
         if not (is_valid_hostname(value) or is_valid_ip_address(value)):
-            raise InvalidValueError('Invalid hostname: {}'.format(value))
+            raise InvalidValueError('无效的主机名: {}'.format(value))
         return value
 
     def get_port(self):
@@ -374,7 +374,7 @@ class IndexHandler(MixinHandler, tornado.web.RequestHandler):
 
         port = to_int(value)
         if port is None or not is_valid_port(port):
-            raise InvalidValueError('Invalid port: {}'.format(value))
+            raise InvalidValueError('无效的端口: {}'.format(value))
         return port
 
     def lookup_hostname(self, hostname, port):
@@ -383,7 +383,7 @@ class IndexHandler(MixinHandler, tornado.web.RequestHandler):
         if self.ssh_client._system_host_keys.lookup(key) is None:
             if self.ssh_client._host_keys.lookup(key) is None:
                 raise tornado.web.HTTPError(
-                        403, 'Connection to {}:{} is not allowed.'.format(
+                        403, '连接至 {}:{} 被拒绝'.format(
                             hostname, port)
                     )
 
@@ -458,7 +458,7 @@ class IndexHandler(MixinHandler, tornado.web.RequestHandler):
         except paramiko.BadAuthenticationType:
             raise ValueError('Bad authentication type.')
         except paramiko.AuthenticationException:
-            raise ValueError('Authentication failed.')
+            raise ValueError('登录验证失败.')
         except paramiko.BadHostKeyException:
             raise ValueError('Bad host key.')
 
