@@ -12,7 +12,7 @@
         font-family: '{{ font.family }}';
         background-image: url(static/img/maxresdefault.jpg);
         background-repeat:no-repeat;
-        background-position:right top;
+        background-size:cover;
       }
       .row {
         margin-top: 15px;
@@ -39,9 +39,9 @@
     </style>
   </head>
   <body>
-    <div id="waiter" style="display: none"> Connecting ... </div>
+    <div id="waiter" style="display: none;" > Connecting ... </div>
 
-    <div class="container form-container" style="display: none">
+    <div class="container form-container" style="display: none;">
       <form id="connect" action="" method="post" enctype="multipart/form-data"{% if debug %} novalidate{% end %}>
         <div class="row">
           <div class="col">
