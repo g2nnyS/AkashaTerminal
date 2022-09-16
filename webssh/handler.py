@@ -449,7 +449,7 @@ class IndexHandler(MixinHandler, tornado.web.RequestHandler):
     def ssh_connect(self, args):
         ssh = self.ssh_client
         dst_addr = args[:2]
-        logging.info('Connecting to {}:{}'.format(*dst_addr))
+        logging.info('连接至 {}:{}'.format(*dst_addr))
 
         try:
             ssh.connect(*args, timeout=options.timeout)
@@ -582,7 +582,7 @@ class WsockHandler(MixinHandler, tornado.websocket.WebSocketHandler):
     def on_close(self):
         logging.info('Disconnected from {}:{}'.format(*self.src_addr))
         if not self.close_reason:
-            self.close_reason = 'client disconnected'
+            self.close_reason = '连接已断开'
 
         worker = self.worker_ref() if self.worker_ref else None
         if worker:
