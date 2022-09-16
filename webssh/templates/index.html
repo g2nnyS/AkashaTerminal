@@ -8,6 +8,12 @@
     <link href="static/css/xterm.min.css" rel="stylesheet" type="text/css"/>
     <link href="static/css/fullscreen.min.css" rel="stylesheet" type="text/css"/>
     <style>
+      body {
+        font-family: '{{ font.family }}';
+        background-image: url(static/img/maxresdefault.jpg);
+        background-repeat:no-repeat;
+        background-position:right top;
+      }
       .row {
         margin-top: 15px;
         margin-bottom: 10px;
@@ -28,11 +34,6 @@
       @font-face {
         font-family: '{{ font.family }}';
         src: url('{{ font.url }}');
-      }
-
-      body {
-        font-family: '{{ font.family }}';
-        background-image: url(static/img/maxresdefault.jpg);
       }
       {% end %}
     </style>
