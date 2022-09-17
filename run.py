@@ -18,12 +18,13 @@ try:
             super(MainWindow, self).__init__()
             self.setWindowTitle('虚空终端 | AkashaTerminal')  #窗口标题
             self.setWindowIcon(QIcon("./webssh/static/img/favicon.png"))
-            self.setWindowFlags(Qt.FramelessWindowHint)
+            self.setAttribute(Qt.WA_TranslucentBackground)
             self.desktop = QApplication.desktop()
             self.setFixedSize(self.desktop.width() * 0.35, self.desktop.height() * 0.6) #窗口大小
             self.browser=QWebEngineView()
             self.browser.load(QUrl('http://127.0.0.1:34223'))
             self.setCentralWidget(self.browser)
+    
 
     if __name__ == '__main__':
         app=QApplication(sys.argv)
@@ -32,5 +33,5 @@ try:
         app.exit(app.exec_())
         os.system('taskkill /im python.exe /f')
 
-except AttributeError:
+except Exception:
     os.system('taskkill /im python.exe /f')
