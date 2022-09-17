@@ -53,12 +53,12 @@
             <input class="form-control" type="number" id="port" name="port" placeholder="22" value="" min=1 max=65535>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
+        <div class="col">
+          <div class="row">
             <label for="Username">用户名</label>
             <input class="form-control" type="text" id="username" name="username" placeholder="root" value="" required>
           </div>
-          <div class="col">
+          <div class="row">
             <label for="Password">密码</label>
             <input class="form-control" type="password" id="password" name="password" value="">
           </div>
@@ -73,18 +73,12 @@
             <input class="form-control" type="password" id="passphrase" name="passphrase" value="">
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <label for="totp">TOTP (基于时间的一次性密码)</label>
-            <input class="form-control" type="password" id="totp" name="totp" value="">
-          </div>
-          <div class="col">
-          </div>
-        </div>
         <input type="hidden" id="term" name="term" value="xterm-256color">
         {% module xsrf_form_html() %}
-        <button type="submit" class="btn btn-primary">连接</button>
-        <button type="reset" class="btn btn-danger">重置信息</button>
+        <div style="text-align:center">
+          <button type="submit" class="btn btn-primary">连接</button>
+          <button type="reset" class="btn btn-danger">重置信息</button>
+        </div>
       </form>
     </div>
 
