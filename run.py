@@ -20,7 +20,7 @@ try:
             self.setWindowIcon(QIcon("./webssh/static/img/favicon.png"))
             self.setAttribute(Qt.WA_TranslucentBackground)
             self.desktop = QApplication.desktop()
-            self.setFixedSize(self.desktop.width() * 0.35, self.desktop.height() * 0.6) #窗口大小
+            self.resize(1300,700)
             self.browser=QWebEngineView()
             self.browser.load(QUrl('http://127.0.0.1:34223'))
             self.setCentralWidget(self.browser)
