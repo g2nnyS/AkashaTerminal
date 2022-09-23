@@ -12,3 +12,5 @@ pip install Pyqt5
 ```
 pip install WebSSH
 ```
+
+随后点击run.py运行
