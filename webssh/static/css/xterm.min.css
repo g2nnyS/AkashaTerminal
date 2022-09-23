@@ -30,7 +30,7 @@
 }
 
 .xterm .composition-view {
-	background: #fff;
+	background: #000;
 	color: #FFF;
 	display: none;
 	position: absolute;
