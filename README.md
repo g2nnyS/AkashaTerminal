@@ -14,3 +14,9 @@ pip install WebSSH
 ```
 
 随后点击run.py运行
+
+## 效果图
+
+---
+
+![](https://files.catbox.moe/xm1lf1.png)
