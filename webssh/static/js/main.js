@@ -42,7 +42,7 @@ jQuery(function($){
       waiter = $('#waiter'),
       term_type = $('#term'),
       style = {},
-      default_title = 'WebSSH',
+      default_title = 'Akasha Terminal',
       title_element = document.querySelector('title'),
       form_id = '#connect',
       debug = document.querySelector(form_id).noValidate,
