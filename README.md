@@ -17,6 +17,4 @@ pip install WebSSH
 
 ## 效果图
 
----
-
 ![](https://files.catbox.moe/xm1lf1.png)
