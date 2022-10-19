@@ -4,6 +4,10 @@
 
 <p align="center">基于<a href="https://github.com/huashengdun/webssh">WebSSH</a>修改的一款SSH工具，灵感来源于原神中的虚空终端</p>
 
+##提醒：有关项目中大量Unverified的commits
+
+这些提交没有问题，我重装系统之后忘记保存了PGP密钥才这样子
+
 ## 开发与调试
 打开cmd或Shell,运行以下指令:
 ```
