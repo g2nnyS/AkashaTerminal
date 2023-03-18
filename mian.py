@@ -12,9 +12,12 @@ from PyQt5.QtWebEngineWidgets import *
 try:
     whnd = ctypes.windll.kernel32.GetConsoleWindow()
     def window():    #窗口实现
-        if whnd != 0:    
-            ctypes.windll.user32.ShowWindow(whnd, 0)    
-            ctypes.windll.kernel32.CloseHandle(whnd)  
+        #如debug=false则隐藏控制台窗口
+        if whnd != 0:
+            debug = True #True显示控制台窗口，False隐藏控制台窗口
+            if debug == False:
+                ctypes.windll.user32.ShowWindow(whnd, 0)
+                ctypes.windll.kernel32.CloseHandle(whnd)
 
         class MainWindow(QMainWindow):
             def __init__(self):
