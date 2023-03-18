@@ -11,13 +11,10 @@
 ## 开发与调试
 打开cmd或Shell,运行以下指令:
 ```
-pip install Pyqt5
-```
-```
-pip install WebSSH
+pip install -r requirements.txt
 ```
 
-随后点击run.py运行
+随后点击main.py运行
 
 ## 效果图
 
