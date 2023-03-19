@@ -49,6 +49,9 @@ try:
         thread_2.start()
         thread_1.join()
         thread_2.join()
+        #当主线程退出时，子线程也退出
+        thread_1.setDaemon(True)
+        thread_2.setDaemon(True)
 
 except Exception:
     sys.exit()
