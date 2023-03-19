@@ -34,24 +34,21 @@ try:
         win=MainWindow()
         win.show()
         app.exit(app.exec_())
-        sys.exit()
-
-    #创建多线程
-    def run_main():
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        loop.run_until_complete(main())
-    thread_1 = threading.Thread(target=run_main)
-    thread_2 = threading.Thread(target=window)
-
-    if __name__ == '__main__':
-        thread_1.start()
-        thread_2.start()
-        thread_1.join()
-        thread_2.join()
-        #当主线程退出时，子线程也退出
-        thread_1.setDaemon(True)
-        thread_2.setDaemon(True)
-
+        raise Exception()
 except Exception:
     sys.exit()
+
+#创建多线程
+def run_main():
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(main())
+thread_1 = threading.Thread(target=run_main)
+thread_2 = threading.Thread(target=window)
+
+if __name__ == '__main__':
+    thread_1.start()
+    thread_2.start()
+    thread_1.join()
+    thread_2.join()
+    raise Exception()
