@@ -10,6 +10,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtWebEngineWidgets import *
 
 try:
+    #获取进程PID
+    pid = os.getpid()
     whnd = ctypes.windll.kernel32.GetConsoleWindow()
     def window():    #窗口实现
         #如debug=false则隐藏控制台窗口
@@ -34,7 +36,7 @@ try:
         win=MainWindow()
         win.show()
         app.exit(app.exec_())
-        raise Exception()
+        os.system("taskkill /f /pid %s" % pid) #杀死进程
 except Exception:
     sys.exit()
 
@@ -51,4 +53,3 @@ if __name__ == '__main__':
     thread_2.start()
     thread_1.join()
     thread_2.join()
-    raise Exception()
