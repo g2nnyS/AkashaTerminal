@@ -1,0 +1,23 @@
+1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "080404b0"
+    BEGIN
+      VALUE "CompanyName", "公司名称"
+      VALUE "FileDescription", "虚空终端"
+      VALUE "FileVersion", "1.1"
+      VALUE "InternalName", "虚空终端AkashaTerminal"
+      VALUE "LegalCopyright", "开源软件-MIT License"
+      VALUE "OriginalFilename", "AkashaTerminal.exe"
+      VALUE "ProductName", "虚空终端"
+      VALUE "ProductVersion", "1.1"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0804, 1200
+  END
+END
